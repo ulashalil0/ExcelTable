@@ -40,14 +40,43 @@ The system uses special operators that behave differently based on the data type
   * `String - Int`: Removes characters matching the ASCII value.
   * `String - String`: Removes occurrences of the shorter string from the longer one.
 * **Encryption (#):**
-  * Encrypts a string by shifting ASCII values by a given integer amount (Caesar Cipher logic).
+  * Encrypts a string by shifting ASCII values by a given integer amount.
 
-### 5. File Operations
-* The final state of the spreadsheet is automatically saved to `spreadsheet.txt` upon exit.
+## 📚 Supported Commands & Syntax
+
+Here is the list of commands you can type into the console:
+
+### Data Entry & Cleaning
+* **Assign Value:** `AssignValue(CELL, TYPE, VALUE)`
+  * *Ex:* `AssignValue(A1, integer, 25)`
+  * *Ex:* `AssignValue(B2, string, Hello)`
+* **Clear Cell:** `ClearCell(CELL)`
+  * *Ex:* `ClearCell(A1)`
+* **Clear All:** `ClearAll()`
+  * *Ex:* `ClearAll()`
+
+### Editing (Rows & Columns)
+* **Add Row:** `AddRow(ROW_NUMBER, DIRECTION)`
+  * *Ex:* `AddRow(3, down)`
+* **Add Column:** `AddColumn(COL_LETTER, DIRECTION)`
+  * *Ex:* `AddColumn(B, right)`
+* **Copy Cell:** `Copy(SOURCE, TARGET)`
+  * *Ex:* `Copy(A1, B5)`
+* **Cut Cell (Move):** `X(SOURCE, TARGET)`
+  * *Ex:* `X(A1, B5)`
+
+### Operations (Math & String)
+* **Operation Format:** `OPERATOR(SOURCE1, SOURCE2, TARGET)`
+* **Multiplication:** `*(A1, B1, C1)`
+* **Division:** `/(A1, B1, C1)`
+* **Subtraction:** `-(A1, B1, C1)`
+* **Encryption:** `#(A1, B1, C1)`
+* **Addition / Concatenation:** `+(A1, B1, C1)`
+  * *Note:* You can sum up to 3 cells: `+(A1, B1, C1, D1)`
 
 ## 🛠️ Technical Details
 * **Language:** C#
-* **Data Structure:** Strictly uses **2D Arrays** for organization. `ArrayList` or `LinkedList` are NOT used as per assignment constraints.
+* **Data Structure:** Strictly uses **2D Arrays** for organization. `ArrayList` or `LinkedList` are NOT used.
 * **Error Handling:** Robust checks for "Index Out of Bounds", "Illegal Operation", and Type Mismatches.
 
 ## 💻 Installation & Usage
@@ -56,12 +85,6 @@ The system uses special operators that behave differently based on the data type
 2.  Navigate to the project directory and run:
     ```
     dotnet run
-    ```
-3.  Sample Command Usage:
-    ```
-    >> AssignValue(A1, integer, 10)
-    >> AssignValue(B1, string, Apple)
-    >> *(B1, A1, C1)
     ```
 
 ## 👨‍💻 Developer
